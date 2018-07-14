@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3F7076A020FA009100379EBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70769F20FA009100379EBD /* AppDelegate.swift */; };
-		3F7076A220FA009100379EBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076A120FA009100379EBD /* ViewController.swift */; };
+		3F7076A220FA009100379EBD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076A120FA009100379EBD /* MainViewController.swift */; };
 		3F7076A520FA009100379EBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7076A320FA009100379EBD /* Main.storyboard */; };
 		3F7076A720FA009200379EBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7076A620FA009200379EBD /* Assets.xcassets */; };
 		3F7076AA20FA009200379EBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7076A820FA009200379EBD /* LaunchScreen.storyboard */; };
 		3F7076B520FA009200379EBD /* iTunesSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076B420FA009200379EBD /* iTunesSearchTests.swift */; };
 		3F7076C020FA009300379EBD /* iTunesSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076BF20FA009300379EBD /* iTunesSearchUITests.swift */; };
+		3F7076D220FA094600379EBD /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076D120FA094600379EBD /* SearchCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		3F70769C20FA009100379EBD /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F70769F20FA009100379EBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F7076A120FA009100379EBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F7076A120FA009100379EBD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3F7076A420FA009100379EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F7076A620FA009200379EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F7076A920FA009200379EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		3F7076BB20FA009300379EBD /* iTunesSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7076BF20FA009300379EBD /* iTunesSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchUITests.swift; sourceTree = "<group>"; };
 		3F7076C120FA009300379EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F7076D120FA094600379EBD /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +99,10 @@
 		3F70769E20FA009100379EBD /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				3F7076CF20FA091300379EBD /* Views */,
+				3F7076CE20FA019200379EBD /* Models */,
+				3F7076CD20FA018900379EBD /* Controllers */,
 				3F70769F20FA009100379EBD /* AppDelegate.swift */,
-				3F7076A120FA009100379EBD /* ViewController.swift */,
 				3F7076A320FA009100379EBD /* Main.storyboard */,
 				3F7076A620FA009200379EBD /* Assets.xcassets */,
 				3F7076A820FA009200379EBD /* LaunchScreen.storyboard */,
@@ -123,6 +127,37 @@
 				3F7076C120FA009300379EBD /* Info.plist */,
 			);
 			path = iTunesSearchUITests;
+			sourceTree = "<group>";
+		};
+		3F7076CD20FA018900379EBD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F7076A120FA009100379EBD /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3F7076CE20FA019200379EBD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3F7076CF20FA091300379EBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F7076D020FA091C00379EBD /* CollectionViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3F7076D020FA091C00379EBD /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				3F7076D120FA094600379EBD /* SearchCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F7076A220FA009100379EBD /* ViewController.swift in Sources */,
+				3F7076A220FA009100379EBD /* MainViewController.swift in Sources */,
 				3F7076A020FA009100379EBD /* AppDelegate.swift in Sources */,
+				3F7076D220FA094600379EBD /* SearchCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
