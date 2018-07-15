@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
     let kCollectionCellHeight:CGFloat = 76.0
     let kLandscapeNumberOfCellPerRow:CGFloat = 2.0
     
+    var data = ["Label1","Label2","Label3","Label4"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,18 +60,29 @@ class MainViewController: UIViewController {
     @objc func keyboardWillHide(notification: NSNotification){
         searchCollectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
     }
+    
+    @IBAction func act(_ sender: Any) {
+        deleteSearchResultItem(itemIndex: 0)
+    }
+    
+    func deleteSearchResultItem(itemIndex:Int) {
+        searchCollectionView.performBatchUpdates({ () -> Void in
+            data.remove(at: itemIndex)
+            searchCollectionView.deleteItems(at: [IndexPath(item: itemIndex, section: 0)])
+        }, completion:nil)
+    }
 }
 
 // MARK: - UICollectionView Delegates
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10;
+        return data.count;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as! SearchCollectionViewCell
-        cell.nameLabel.text = String(format: "Label Name Desc %i", indexPath.row)
+        cell.nameLabel.text = data[indexPath.row]//String(format: "Label Name Desc %i", indexPath.row)
         cell.infoLabel.text = String(format: "info %i", indexPath.row)
         return cell
     }

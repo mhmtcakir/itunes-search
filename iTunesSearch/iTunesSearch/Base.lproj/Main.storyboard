@@ -106,7 +106,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="iTunes Search" id="rco-Fw-59p">
-                        <barButtonItem key="rightBarButtonItem" title="TÜMÜ" style="plain" id="f3q-Z0-gAq"/>
+                        <barButtonItem key="rightBarButtonItem" title="TÜMÜ" style="plain" id="f3q-Z0-gAq">
+                            <connections>
+                                <action selector="act:" destination="BYZ-38-t0r" id="a3S-uM-0HF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="navBarRightButtonItem" destination="f3q-Z0-gAq" id="2VO-tT-0YU"/>
