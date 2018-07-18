@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  iTunesSearch
+
+  Created by Mehmet Çakır on 18.07.2018.
+  Copyright © 2018 Mehmet Çakır. All rights reserved.
+*/
+
+"GenericSearchErrorMessage" = "The search result could not be reached. Try again.";
+"SearchItemDeleteAlertMessage" = "Are you sure that you want to delete the item from your search list?";
+"DetailDataNotFound" = "Detail data not found!";
+"AlertViewDeleteButtonTitle" = "Delete";
+"AlertViewCancelButtonTitle" = "Cancel";
+"AlertViewCloseButtonTitle" = "Close";
+"AlertPopupSearchTypeTitle" = "Search Type";
+"AlertPopupSearchTypeDescription" = "Choose a search type.";
+"Error" = "Error";
+"NoSearchResult" = "No search result for '%@'";

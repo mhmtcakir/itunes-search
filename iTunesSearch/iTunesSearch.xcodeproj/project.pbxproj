@@ -15,6 +15,18 @@
 		3F7076B520FA009200379EBD /* iTunesSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076B420FA009200379EBD /* iTunesSearchTests.swift */; };
 		3F7076C020FA009300379EBD /* iTunesSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076BF20FA009300379EBD /* iTunesSearchUITests.swift */; };
 		3F7076D220FA094600379EBD /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076D120FA094600379EBD /* SearchCollectionViewCell.swift */; };
+		3F7076DE20FB614900379EBD /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076DD20FB614900379EBD /* JSONSerializable.swift */; };
+		3F7076E320FB64EF00379EBD /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076E220FB64EF00379EBD /* UserDefaultsHelper.swift */; };
+		3F7076E520FB680300379EBD /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076E420FB680300379EBD /* Enums.swift */; };
+		3F7076EC20FB94E700379EBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076EB20FB94E700379EBD /* Constants.swift */; };
+		3F7076EF20FB99D200379EBD /* SearchDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076EE20FB99D200379EBD /* SearchDataService.swift */; };
+		3F7076F120FB9C3800379EBD /* ResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076F020FB9C3800379EBD /* ResultItem.swift */; };
+		3F7076F320FB9DD300379EBD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076F220FB9DD300379EBD /* Response.swift */; };
+		3F7076F720FD4D3000379EBD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7076F620FD4D3000379EBD /* Extensions.swift */; };
+		3F833A4620FE89D8007FAA6B /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F833A4520FE89D8007FAA6B /* ImageUtility.swift */; };
+		3F833A4820FE97BB007FAA6B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F833A4720FE97BB007FAA6B /* DetailViewController.swift */; };
+		3F833A4A20FEB9AE007FAA6B /* DateTimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F833A4920FEB9AE007FAA6B /* DateTimeUtils.swift */; };
+		3F833A4F20FED8D1007FAA6B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F833A4D20FED8D1007FAA6B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +61,18 @@
 		3F7076BF20FA009300379EBD /* iTunesSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchUITests.swift; sourceTree = "<group>"; };
 		3F7076C120FA009300379EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7076D120FA094600379EBD /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		3F7076DD20FB614900379EBD /* JSONSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
+		3F7076E220FB64EF00379EBD /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		3F7076E420FB680300379EBD /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		3F7076EB20FB94E700379EBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F7076EE20FB99D200379EBD /* SearchDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataService.swift; sourceTree = "<group>"; };
+		3F7076F020FB9C3800379EBD /* ResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItem.swift; sourceTree = "<group>"; };
+		3F7076F220FB9DD300379EBD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		3F7076F620FD4D3000379EBD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3F833A4520FE89D8007FAA6B /* ImageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
+		3F833A4720FE97BB007FAA6B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3F833A4920FEB9AE007FAA6B /* DateTimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeUtils.swift; sourceTree = "<group>"; };
+		3F833A4E20FED8D1007FAA6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = iTunesSearch/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				3F70769E20FA009100379EBD /* iTunesSearch */,
+				3F833A4D20FED8D1007FAA6B /* Localizable.strings */,
 				3F7076B320FA009200379EBD /* iTunesSearchTests */,
 				3F7076BE20FA009300379EBD /* iTunesSearchUITests */,
 				3F70769D20FA009100379EBD /* Products */,
@@ -99,6 +124,9 @@
 		3F70769E20FA009100379EBD /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				3F7076ED20FB99BD00379EBD /* DataServices */,
+				3F7076E120FB64E200379EBD /* Helpers */,
+				3F7076DC20FB609A00379EBD /* Utilities */,
 				3F7076CF20FA091300379EBD /* Views */,
 				3F7076CE20FA019200379EBD /* Models */,
 				3F7076CD20FA018900379EBD /* Controllers */,
@@ -107,6 +135,7 @@
 				3F7076A620FA009200379EBD /* Assets.xcassets */,
 				3F7076A820FA009200379EBD /* LaunchScreen.storyboard */,
 				3F7076AB20FA009200379EBD /* Info.plist */,
+				3F7076EB20FB94E700379EBD /* Constants.swift */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -133,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				3F7076A120FA009100379EBD /* MainViewController.swift */,
+				3F833A4720FE97BB007FAA6B /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -140,6 +170,8 @@
 		3F7076CE20FA019200379EBD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3F7076F020FB9C3800379EBD /* ResultItem.swift */,
+				3F7076F220FB9DD300379EBD /* Response.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,6 +190,34 @@
 				3F7076D120FA094600379EBD /* SearchCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		3F7076DC20FB609A00379EBD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3F7076DD20FB614900379EBD /* JSONSerializable.swift */,
+				3F7076F620FD4D3000379EBD /* Extensions.swift */,
+				3F833A4520FE89D8007FAA6B /* ImageUtility.swift */,
+				3F833A4920FEB9AE007FAA6B /* DateTimeUtils.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3F7076E120FB64E200379EBD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3F7076E220FB64EF00379EBD /* UserDefaultsHelper.swift */,
+				3F7076E420FB680300379EBD /* Enums.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3F7076ED20FB99BD00379EBD /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				3F7076EE20FB99D200379EBD /* SearchDataService.swift */,
+			);
+			path = DataServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F7076AA20FA009200379EBD /* LaunchScreen.storyboard in Resources */,
+				3F833A4F20FED8D1007FAA6B /* Localizable.strings in Resources */,
 				3F7076A720FA009200379EBD /* Assets.xcassets in Resources */,
 				3F7076A520FA009100379EBD /* Main.storyboard in Resources */,
 			);
@@ -291,9 +352,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7076E320FB64EF00379EBD /* UserDefaultsHelper.swift in Sources */,
 				3F7076A220FA009100379EBD /* MainViewController.swift in Sources */,
+				3F7076EF20FB99D200379EBD /* SearchDataService.swift in Sources */,
+				3F7076F320FB9DD300379EBD /* Response.swift in Sources */,
+				3F833A4820FE97BB007FAA6B /* DetailViewController.swift in Sources */,
+				3F7076DE20FB614900379EBD /* JSONSerializable.swift in Sources */,
+				3F833A4620FE89D8007FAA6B /* ImageUtility.swift in Sources */,
 				3F7076A020FA009100379EBD /* AppDelegate.swift in Sources */,
+				3F7076F720FD4D3000379EBD /* Extensions.swift in Sources */,
+				3F7076F120FB9C3800379EBD /* ResultItem.swift in Sources */,
+				3F833A4A20FEB9AE007FAA6B /* DateTimeUtils.swift in Sources */,
+				3F7076E520FB680300379EBD /* Enums.swift in Sources */,
 				3F7076D220FA094600379EBD /* SearchCollectionViewCell.swift in Sources */,
+				3F7076EC20FB94E700379EBD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +415,14 @@
 				3F7076A920FA009200379EBD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3F833A4D20FED8D1007FAA6B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F833A4E20FED8D1007FAA6B /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -399,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -453,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -469,6 +549,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M69JXJ5XR6;
 				INFOPLIST_FILE = iTunesSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +568,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M69JXJ5XR6;
 				INFOPLIST_FILE = iTunesSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

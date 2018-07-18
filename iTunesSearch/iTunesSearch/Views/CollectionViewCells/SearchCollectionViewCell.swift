@@ -11,5 +11,10 @@ import UIKit
 class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var infoLabel: UILabel!    
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var readedOverlayView: UIView!
+    
+    func setReaded(readed:Bool) {
+        readedOverlayView.isHidden = !readed
+    }
 }
