@@ -25,6 +25,7 @@ extension JSONSerializable {
                 return dict
             }
         }
+        
         return nil
     }
 }

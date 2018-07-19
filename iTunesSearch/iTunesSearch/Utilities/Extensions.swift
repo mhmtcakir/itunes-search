@@ -27,12 +27,3 @@ extension String {
     }
 }
 
-extension Array {
-    func isEmpty() -> Bool {
-        if self.count == 0 {
-            return true
-        }
-        return false
-    }
-}
-

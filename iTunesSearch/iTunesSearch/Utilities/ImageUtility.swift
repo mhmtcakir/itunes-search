@@ -28,9 +28,13 @@ extension UIImageView {
         DispatchQueue.main.async {
             self.image = UIImage(named: "imagePlaceholderSmall")            
         }
+        
         DispatchQueue.global().async {
-            guard let url = URL(string: fromUrl ?? "") else { return }
-            if let cachedImageData =  ImageUtility.sharedInstance.imageCache.object(forKey: url.absoluteString as NSString){
+            guard let url = URL(string: fromUrl ?? "") else {
+                return
+            }
+            
+            if let cachedImageData =  ImageUtility.sharedInstance.imageCache.object(forKey: url.absoluteString as NSString) {
                 DispatchQueue.main.async {
                     self.image = UIImage(data: cachedImageData as Data)
                 }

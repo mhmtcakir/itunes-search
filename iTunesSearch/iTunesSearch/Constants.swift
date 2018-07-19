@@ -8,8 +8,7 @@
 
 import Foundation
 
-class Constant: NSObject {
-    
+class Constant: NSObject {    
     struct URLs {
         static let kResultLimit:Int = 100
         static let kBaseURL: String = "https://itunes.apple.com/"

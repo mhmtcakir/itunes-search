@@ -8,8 +8,7 @@
 
 import Foundation
 
-class DateTimeUtils {
-    
+class DateTimeUtils {    
     var formatter:DateFormatter?
     let kResponseDateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     let kPrintDateFormat = "dd MMM yyyy"
@@ -21,7 +20,10 @@ class DateTimeUtils {
     }()
     
     func dateStringToFormattedString(dateString:String?) -> String {
-        guard let dateString = dateString else { return "" }
+        guard let dateString = dateString else {
+            return ""
+        }
+        
         DateTimeUtils.sharedInstance.formatter?.dateFormat = kResponseDateFormat
         if let date = DateTimeUtils.sharedInstance.formatter?.date(from: dateString) {
             DateTimeUtils.sharedInstance.formatter?.dateFormat = kPrintDateFormat
@@ -29,6 +31,7 @@ class DateTimeUtils {
                 return formattedDateString
             }
         }
+        
         return ""
     }
 }

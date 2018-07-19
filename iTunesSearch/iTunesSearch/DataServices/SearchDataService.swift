@@ -13,7 +13,6 @@ public protocol SearchDataServiceDelegate {
 }
 
 class SearchDataService {
-    
     var dataTask:URLSessionDataTask?
     var delegate:SearchDataServiceDelegate?
     
@@ -27,7 +26,7 @@ class SearchDataService {
         }
     }
     
-    func searchData(withText text:String, andDataType type:String) {
+    public func searchData(withText text:String, andDataType type:String) {
         #if targetEnvironment(simulator)
         print("search text:\(text) type:\(type)")
         #endif
@@ -54,7 +53,9 @@ class SearchDataService {
                 }
             }
             
-            guard let data = data else { return }
+            guard let data = data else {
+                return
+            }
             
             do {
                 let resultData = try JSONDecoder().decode(Response.self, from: data)
@@ -63,8 +64,7 @@ class SearchDataService {
                     if let _ = self.delegate {
                         self.delegate!.searchRetrieved(response: resultData, withErrorMessage: nil)
                     }
-                }
-                
+                }                
             } catch let jsonError {
                 print(jsonError)
                 DispatchQueue.main.async {

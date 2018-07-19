@@ -22,6 +22,7 @@ class AlertUtility {
         guard let alertController = infoAlert else {
             return AlertUtility.sharedInstance.infoAlert!
         }
+        
         infoAlert?.title = title
         infoAlert?.message = message
         return alertController

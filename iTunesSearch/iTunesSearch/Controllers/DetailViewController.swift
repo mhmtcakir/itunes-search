@@ -13,7 +13,6 @@ protocol DetailViewDelegate {
 }
 
 class DetailViewController:UIViewController {
-    
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var trackNameLabel: UILabel!
@@ -67,6 +66,7 @@ class DetailViewController:UIViewController {
     
     func getSubInfo2() -> String {
         var subInfo2 = ""
+        
         if let kind = searchItem!.kind {
             if kind.contains("movie") {
                 subInfo2 = searchItem?.contentAdvisoryRating ?? ""
@@ -76,6 +76,7 @@ class DetailViewController:UIViewController {
                 subInfo2 = "Podcasts"
             }
         }
+        
         return subInfo2
     }
     
@@ -87,6 +88,7 @@ class DetailViewController:UIViewController {
                 self.navigationController?.popViewController(animated: true)
             }
         }))
+        
         alert.addAction(UIAlertAction(title: "AlertViewCancelButtonTitle".localized(), style: .cancel, handler:nil))
         self.present(alert, animated: true)
     }
@@ -98,6 +100,7 @@ class DetailViewController:UIViewController {
                 self.navigationController?.popViewController(animated: true)
             }
         }))
+        
         self.present(alert, animated: true)
     }
 }

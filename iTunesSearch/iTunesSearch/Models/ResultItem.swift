@@ -73,6 +73,7 @@ public class ResultItem:JSONSerializable {
         if let kind = self.kind {
             return kind.contains("movie") ? self.trackName : self.collectionName
         }
+        
         return nil
     }        
 }

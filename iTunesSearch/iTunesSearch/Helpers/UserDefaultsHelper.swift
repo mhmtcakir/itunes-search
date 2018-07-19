@@ -27,7 +27,7 @@ class UserDefaultsHelper {
         return trackList
     }
     
-    public func saveItem(trackId:Int, withKey key:StoredType){
+    public func saveItem(trackId:Int, withKey key:StoredType) {
         let encodedData:Data?
         
         if key == .Readed {

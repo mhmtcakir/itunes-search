@@ -9,8 +9,9 @@
 import XCTest
 @testable import iTunesSearch
 
-class iTunesSearchTests: XCTestCase {
+class iTunesSearchTests: XCTestCase, SearchDataServiceDelegate {
     var mainVC:MainViewController?
+    var expectation:XCTestExpectation?
     
     override func setUp() {
         super.setUp()
@@ -21,11 +22,6 @@ class iTunesSearchTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-    }
-    
-    func testSearchBarPlaceholder() {
-        //XCTAssertNotNil(mainVC?.searchBar.placeholder)
-        //XCTAssertEqual("Search", mainVC?.searchBar.placeholder!)
     }
     
     func testSearchTypeMenuItems() {
@@ -55,23 +51,21 @@ class iTunesSearchTests: XCTestCase {
     }
     
     func testRemoveItemFromList() {
-        
         mainVC?.removeItemFromList(atIndex: -1)
         mainVC?.removeItemFromList(atIndex: 10)
         mainVC?.removeItemFromList(atIndex: 100)
         XCTAssertTrue(true);
-        
-    }
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testSearchAPI() {
+        let testSearchKeyword = "Mehmet";
+        let dataService = SearchDataService(dataServiceDelegate: self)
+        dataService.searchData(withText: testSearchKeyword, andDataType: "all")
     }
     
+    func searchRetrieved(response: Response?, withErrorMessage error: String?) {
+        XCTAssertNotNil(response)
+        XCTAssertNotNil(response?.resultCount)
+        XCTAssertNotNil(response?.results)
+    }
 }
