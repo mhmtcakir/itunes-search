@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17C205" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="ReadedItems" representedClassName="ReadedItems" syncable="YES" codeGenerationType="class">
-        <attribute name="trackId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-    </entity>
-    <elements>
-        <element name="ReadedItems" positionX="-45" positionY="0" width="128" height="60"/>
-    </elements>
-</model>
