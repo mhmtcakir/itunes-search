@@ -255,7 +255,7 @@ extension MainViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        if let searchText = searchBar.text, searchText.count > 0, searchText.count < 3 {
+        if let searchText = searchBar.text, searchText.count == 2 {
             sendSearchRequest(searchBar.text!)
         }
     }
