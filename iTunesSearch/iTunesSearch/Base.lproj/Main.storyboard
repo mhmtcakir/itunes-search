@@ -14,7 +14,7 @@
         <!--iTunes Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchController" id="BYZ-38-t0r" customClass="MainViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,6 +116,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="d4a-0o-zWM"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search movies, podcasts and musics." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxF-iY-AfJ">
+                                <rect key="frame" x="10" y="423" width="355" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zSO-5G-dtg">
                                 <rect key="frame" x="169" y="415" width="37" height="37"/>
                                 <color key="color" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
@@ -141,7 +147,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fxF-iY-AfJ" secondAttribute="trailing" constant="10" id="4H1-fN-UPi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="umR-dd-52O" secondAttribute="trailing" constant="6" id="ETg-hd-eQ1"/>
+                            <constraint firstItem="fxF-iY-AfJ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Jny-Y6-FnP"/>
                             <constraint firstItem="1hh-ar-XVT" firstAttribute="top" secondItem="umR-dd-52O" secondAttribute="bottom" id="KTB-fJ-oUg"/>
                             <constraint firstItem="Mv1-Wi-ZW0" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="MbK-tS-7gG"/>
                             <constraint firstItem="umR-dd-52O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="6" id="WDa-6H-we4"/>
@@ -151,6 +159,7 @@
                             <constraint firstItem="Mv1-Wi-ZW0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="kQn-GZ-Ufu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mv1-Wi-ZW0" secondAttribute="trailing" constant="10" id="rST-RT-SWh"/>
                             <constraint firstItem="zSO-5G-dtg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sMA-L2-NSV"/>
+                            <constraint firstItem="fxF-iY-AfJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="seD-d2-CeM"/>
                             <constraint firstItem="umR-dd-52O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wmv-Hh-LEL"/>
                             <constraint firstItem="1hh-ar-XVT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="y5z-vc-eMh"/>
                         </constraints>
@@ -159,7 +168,7 @@
                     <navigationItem key="navigationItem" title="iTunes Search" id="rco-Fw-59p">
                         <barButtonItem key="rightBarButtonItem" title="All" style="done" id="f3q-Z0-gAq">
                             <connections>
-                                <action selector="act:" destination="BYZ-38-t0r" id="a3S-uM-0HF"/>
+                                <action selector="navigationBarSearchTypeButtonAction:" destination="BYZ-38-t0r" id="163-4Z-2fC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -170,6 +179,7 @@
                         <outlet property="noSearchResultView" destination="Mv1-Wi-ZW0" id="V6f-NI-Df6"/>
                         <outlet property="searchBar" destination="umR-dd-52O" id="7z5-Ae-8In"/>
                         <outlet property="searchCollectionView" destination="1hh-ar-XVT" id="ahj-uW-A74"/>
+                        <outlet property="searchPlaceholderLabel" destination="fxF-iY-AfJ" id="gLG-9B-auP"/>
                         <segue destination="7SV-lU-bVr" kind="show" identifier="detailSegue" id="A1T-XU-l3c"/>
                     </connections>
                 </viewController>
@@ -439,7 +449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qr2-VB-BGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631.2" y="-667.98029556650249"/>
+            <point key="canvasLocation" x="1564" y="-667"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WJG-Bh-wwa">

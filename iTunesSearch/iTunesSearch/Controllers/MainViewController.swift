@@ -13,6 +13,7 @@ class MainViewController: UIViewController,SearchDataServiceDelegate,DetailViewD
     @IBOutlet weak var navBarRightButtonItem: UIBarButtonItem!
     @IBOutlet weak var noSearchResultView: UIStackView!
     @IBOutlet weak var noSearchResultLabel: UILabel!
+    @IBOutlet weak var searchPlaceholderLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchCollectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -88,6 +89,9 @@ class MainViewController: UIViewController,SearchDataServiceDelegate,DetailViewD
             noSearchResultLabel.text = String(format: "NoSearchResult".localized(), searchText)
             noSearchResultView.isHidden = false
         }
+        else {
+            searchPlaceholderLabel.isHidden = false
+        }
         searchCollectionView.reloadData()
     }
     
@@ -105,7 +109,7 @@ class MainViewController: UIViewController,SearchDataServiceDelegate,DetailViewD
     
     // MARK: - Button Actions -
     
-    @IBAction func act(_ sender: Any) {
+    @IBAction func navigationBarSearchTypeButtonAction(_ sender: Any) {
         let alert = UIAlertController(title: "AlertPopupSearchTypeTitle".localized(), message: "AlertPopupSearchTypeDescription".localized(), preferredStyle: .actionSheet)
         for item in Constant.Menus.kSearchTypeMenuItems.keys.sorted() {
             alert.addAction(UIAlertAction(title: item, style: .default, handler:alertButtonsAction))
@@ -144,7 +148,7 @@ class MainViewController: UIViewController,SearchDataServiceDelegate,DetailViewD
             if let errMsg = response?.errorMessage {
                 errorMessage = errMsg
             }
-            
+            self.present(AlertUtility.sharedInstance.getInfoAlert(title: nil, message: errorMessage), animated: true)
             self.searchResult = []
             prepareSearchDataListView(checkDeletedList: true)
             return
@@ -160,10 +164,11 @@ class MainViewController: UIViewController,SearchDataServiceDelegate,DetailViewD
         clearSearchResultData()
         searchCollectionView.isHidden = true
         NSObject.cancelPreviousPerformRequests(withTarget: self)
-        self.perform(#selector(getSearchData(_:)), with: searchText, afterDelay: 0.3)
+        self.perform(#selector(getSearchData(_:)), with: searchText, afterDelay: 0.6)
     }
     
     @objc private func getSearchData(_ searchText:String?) {
+        searchPlaceholderLabel.isHidden = true
         noSearchResultView.isHidden = true
         activityIndicator.startAnimating()
         dataService?.searchData(withText: searchText ?? "", andDataType: Constant.Menus.kSearchTypeMenuItems[navBarRightButtonItem.title!] ?? "")
@@ -233,6 +238,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension MainViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchPlaceholderLabel.isHidden = true
         noSearchResultView.isHidden = true
         if searchText.count > kMinSearchTextCount {
             sendSearchRequest(searchText)
