@@ -150,7 +150,7 @@ class MainViewController: UIViewController,SearchDataServiceDelegate,DetailViewD
             if let errMsg = response?.errorMessage {
                 errorMessage = errMsg
             }
-    
+            
             self.present(AlertUtility.sharedInstance.getInfoAlert(title: nil, message: errorMessage), animated: true)
             self.searchResult = []
             prepareSearchDataListView(checkDeletedList: true)
@@ -165,15 +165,14 @@ class MainViewController: UIViewController,SearchDataServiceDelegate,DetailViewD
     
     public func sendSearchRequest(_ searchText:String) {
         clearSearchResultData()
+        activityIndicator.startAnimating()
         searchCollectionView.isHidden = true
-        NSObject.cancelPreviousPerformRequests(withTarget: self)
         self.perform(#selector(getSearchData(_:)), with: searchText, afterDelay: 0.6)
     }
     
     @objc private func getSearchData(_ searchText:String?) {
         searchPlaceholderLabel.isHidden = true
         noSearchResultView.isHidden = true
-        activityIndicator.startAnimating()
         dataService?.searchData(withText: searchText ?? "", andDataType: Constant.Menus.kSearchTypeMenuItems[navBarRightButtonItem.title!] ?? "")
     }
     
@@ -203,7 +202,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as! SearchCollectionViewCell
         let item:ResultItem = searchResult[indexPath.row]
-        cell.nameLabel.text = item.getListItemNameText() ?? ""            
+        cell.nameLabel.text = item.getListItemNameText() ?? ""
         cell.infoLabel.text = item.artistName ?? ""
         cell.itemImageView.loadImage(fromUrl: item.artworkUrl60)
         cell.setReaded(readed: item.isReaded)
@@ -217,7 +216,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         } else {
             return CGSize(width: self.view.frame.size.width-(2*kCollectionSectionInset), height: kCollectionCellHeight)
         }
-    }    
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "detailSegue", sender: indexPath.row)
@@ -240,6 +239,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 // MARK: - UICollectionView Delegates -
 extension MainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
         searchPlaceholderLabel.isHidden = true
         noSearchResultView.isHidden = true
         
